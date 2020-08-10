@@ -5,20 +5,11 @@ import FertilizerComponent from './FertilizerComponent';
 
 export default function FertilizersComponent(props) {
     
-    const [__sizeUnit, __setsizeUnit] = useState(props.defaultUnit);
     const [__fertilizers, __setFertilizers] = useState({});
 
 
-    const updateUnitToParent = (unit) => {
-        props.onChangeCallback({
-            "unit": props.units[unit],
-            "fertilizers": __fertilizers
-        })
-    }
-
     const updateFertilizersParent = (id, value) => {
         props.onChangeCallback({
-            "unit": props.units[__sizeUnit],
             "fertilizers": {...__fertilizers, [id] : value}
         })
     }
@@ -31,14 +22,6 @@ export default function FertilizersComponent(props) {
                     <Text h1 style={{ fontSize: 20 }}>
                         Fertilizers
                     </Text>
-                </View>
-
-                <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' }}>
-                    <ButtonGroup onPress={(selectedIndex) => { __setsizeUnit(selectedIndex); updateUnitToParent(selectedIndex); }}
-                        selectedIndex={__sizeUnit}
-                        buttons={props.units}
-                        containerStyle={{ width: 100, height: 30, marginTop: 0, marginRight: 0 }}
-                    />
                 </View>
             </View>
 

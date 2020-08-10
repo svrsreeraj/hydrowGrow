@@ -40,9 +40,8 @@ export default function PpmCalculator(props) {
   }
 
   const calcultePpms = (fertilzersInfo, solutionSize) => {
-    let fertlizersUnit = fertilzersInfo.unit;
     let fertilizers = fertilzersInfo.fertilizers
-    let solutionObj = getPPMVlaues(solutionSize, fertilizers, fertlizersUnit);
+    let solutionObj = getPPMVlaues(solutionSize, fertilizers);
     __setSolutionObj(solutionObj);
   }
 
@@ -65,27 +64,27 @@ export default function PpmCalculator(props) {
       <PpmList nutrientsList={__solutionObj.nutrientPPM ? __solutionObj.nutrientPPM : {}} />
 
 
-      <FertilizersComponent fertilizers={_fertlisers} units={[SIZE_IN_MG, SIZE_IN_G]} defaultUnit={1} onChangeCallback={fertilizersChanges} />
+      <FertilizersComponent fertilizers={_fertlisers} onChangeCallback={fertilizersChanges} />
 
 
 
       <View style={{ flex: 1, alignItems: 'center', marginTop: 20 }}>
         <Button title=" Clear " onPress={() => {
 
-          var path = RNFS.DocumentDirectoryPath + '/test.txt';
-          RNFS.writeFile(path, 'Lorem ipsum dolor sit amet', 'utf8')
-            .then((success) => {
-              console.log('FILE WRITTEN!');
+          // var path = RNFS.DocumentDirectoryPath + '/test.txt';
+          // RNFS.writeFile(path, 'Lorem ipsum dolor sit amet', 'utf8')
+          //   .then((success) => {
+          //     console.log('FILE WRITTEN!');
 
-              RNFS.readFile(path, 'utf8').then((contents) => {
-                console.log(contents);
-              })
+          //     RNFS.readFile(path, 'utf8').then((contents) => {
+          //       console.log(contents);
+          //     })
 
-            })
-            .catch((err) => {
-              console.log(err.message);
-            });
-          // Actions.pop(); Actions.npmCalculator();
+          //   })
+          //   .catch((err) => {
+          //     console.log(err.message);
+          //   });
+          Actions.pop(); Actions.npmCalculator();
         }} />
       </View>
 
@@ -93,12 +92,12 @@ export default function PpmCalculator(props) {
   );
 }
 
-const getPPMVlaues = (solutionSize, fertilizers, fertlizersUnit) => {
+const getPPMVlaues = (solutionSize, fertilizers) => {
   let solutionObj = new Solution(solutionSize);
   if (!(solutionSize > 0)) {
     return solutionObj;
   }
-  let sizeMultiPlyFactor = SIZE_IN_G === fertlizersUnit ? 1000 : 1;
+  let sizeMultiPlyFactor = 1;
 
   console.log(fertilizers)
 
