@@ -6,7 +6,9 @@ import { Actions } from 'react-native-router-flux';
 export default function Main() {
   return (
     <View style={styles.container}>
-      <Button title="PPM Calculator" onPress={() => { Actions.npmCalculator(); }} />
+      <Button containerStyle={{marginBottom:10}} title="PPM Calculator" onPress={() => { Actions.npmCalculator(); }} />
+
+      <Button containerStyle={{marginBottom:10}} title="Substance Manager" onPress={() => { Actions.substanceManager(); }} />
     </View>
   );
 }

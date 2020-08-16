@@ -8,10 +8,7 @@ import FertlizersArr from '../lib/hydro/fertilizers';
 import FertilizerFactory from '../lib/hydro/fertilizerFactory';
 import Solution from '../lib/hydro/solution';
 import { Actions } from 'react-native-router-flux';
-var RNFS = require('react-native-fs');
 
-const SIZE_IN_MG = "Mg"
-const SIZE_IN_G = "G"
 const defaultSolutionSize = 10
 
 const _fertlisers = FertlizersArr.map((fertilizer) => {
@@ -70,20 +67,6 @@ export default function PpmCalculator(props) {
 
       <View style={{ flex: 1, alignItems: 'center', marginTop: 20 }}>
         <Button title=" Clear " onPress={() => {
-
-          // var path = RNFS.DocumentDirectoryPath + '/test.txt';
-          // RNFS.writeFile(path, 'Lorem ipsum dolor sit amet', 'utf8')
-          //   .then((success) => {
-          //     console.log('FILE WRITTEN!');
-
-          //     RNFS.readFile(path, 'utf8').then((contents) => {
-          //       console.log(contents);
-          //     })
-
-          //   })
-          //   .catch((err) => {
-          //     console.log(err.message);
-          //   });
           Actions.pop(); Actions.npmCalculator();
         }} />
       </View>

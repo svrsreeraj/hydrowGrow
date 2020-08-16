@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, ScrollView, processColor } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TextInput } from 'react-native';
 import { Card, ButtonGroup, Divider } from 'react-native-elements';
 import FertilizerComponent from './FertilizerComponent';
 

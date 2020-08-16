@@ -26,6 +26,7 @@ export default function PpmList(props) {
                     <Rows data={[[nutrientsList["Fe"], nutrientsList["B"], nutrientsList["Cu"], nutrientsList["Mn"], nutrientsList["Zn"], nutrientsList["Mo"]]]} textStyle={{ margin: 4, textAlign: 'center' }} />
                 </Table>
             </View>
+            
 
         </View>
     );

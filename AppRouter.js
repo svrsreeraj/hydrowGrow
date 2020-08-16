@@ -3,6 +3,7 @@ import { Router, Scene } from 'react-native-router-flux';
 import { StyleSheet, View, Text } from 'react-native';
 import Main from './Main';
 import PpmCalculator from './PpmCalculator/PpmCalculator';
+import SubstanceManager from './SubstanceManager';
 
 export default class AppRouter extends Component {
     render() {
@@ -11,6 +12,7 @@ export default class AppRouter extends Component {
                 <Scene key="root">
                     <Scene key="mainOage" component={Main} title="Home" initial={true} />
                     <Scene key="npmCalculator" component={PpmCalculator} title="PPM Calculator" />
+                    <Scene key="substanceManager" component={SubstanceManager} title="Substance Manager" />
                 </Scene>
             </Router>
         )
